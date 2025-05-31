@@ -2,6 +2,7 @@ node_modules
 dist
 yarn.lock
 .env
+env
 .env.example
 # IDE
 .idea
