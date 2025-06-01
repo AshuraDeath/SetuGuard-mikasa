@@ -8,6 +8,9 @@ import { DomainCheckModule } from './modules/domain-check/domain-check.module';
 import { FeedbackModule } from './modules/feedback/feedback.module';
 import { HealthModule } from './modules/health/health.module';
 import { RPKIVerifyModule } from './modules/rpki-verify/rpki-verify.module';
+import { JwtAuthGuard } from '@modules/auth/guards/jwt-auth.guard';
+import { RolesGuard } from '@modules/auth/guards/roles.guard';
+import { Roles } from '@modules/auth/decorators/roles.decorator';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -31,6 +34,6 @@ import { RPKIVerifyModule } from './modules/rpki-verify/rpki-verify.module';
     RPKIVerifyModule,
   ],
   providers: [],
-  exports: [],
+  exports: [JwtAuthGuard, RolesGuard, Roles],
 })
 export class AppModule {}

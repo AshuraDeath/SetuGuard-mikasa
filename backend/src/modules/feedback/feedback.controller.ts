@@ -2,7 +2,7 @@ import { Controller, Post, Body, UseGuards, Get } from "@nestjs/common";
 import { ApiTags, ApiOperation, ApiBody } from "@nestjs/swagger";
 import { AuthGuard } from "@nestjs/passport";
 import { CreateFeedbackDto } from "./dto/create-feedback.dto";
-import { FeedbackService } from "./feedback.service";
+import { FeedbackService } from "./service/feedback.service";
 
 @ApiTags("feedback")
 @Controller("feedback")

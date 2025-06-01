@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FeedbackController } from './feedback.controller';
-import { FeedbackService } from './feedback.service';
+import { FeedbackService } from './service/feedback.service';
 import { FeedbackEntity } from './entities/feedback.entity';
 
 @Module({

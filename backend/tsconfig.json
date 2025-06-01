@@ -18,7 +18,9 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "*": ["src/*"]
+      "@app/*": ["src/*"],
+      "@modules/*": ["src/modules/*"],
+      "@users/*": ["src/users/*"]
     }
   }
 }

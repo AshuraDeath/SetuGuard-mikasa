@@ -1,6 +1,12 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { FeedbackType } from '../enums/feedback-type.enum';
 
+export interface FeedbackMetadata {
+  userAgent?: string;
+  timestamp?: string;
+  [key: string]: any;
+}
+
 @Entity('feedback')
 export class FeedbackEntity {
   @PrimaryGeneratedColumn()
@@ -20,6 +26,12 @@ export class FeedbackEntity {
 
   @Column()
   userId: string;
+
+  @Column({ type: 'jsonb', nullable: true })
+  metadata: FeedbackMetadata;
+
+  @Column({ type: 'timestamptz', nullable: true })
+  archivedAt: Date | null;
 
   @CreateDateColumn()
   createdAt: Date;
